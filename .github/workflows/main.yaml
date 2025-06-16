@@ -23,7 +23,9 @@ jobs:
 
             #finally build your app with the latest command
             - name: Build and test with Maven
-              run: mvn verify --file simple-api/pom.xml
+              env:
+                  SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+              run: mvn verify --file simple-api/pom.xml org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=martindebbah_tp-devops-correction-docker
 
     build-and-push-docker-image:
         needs: test-backend
