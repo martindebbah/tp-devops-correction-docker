@@ -3,6 +3,6 @@
       name: proxy
       image: mdebbah/tp-devops-http-server:latest
       networks:
-          - name: tp-network
+          - name: tp-network-app
       ports:
           - "80:80"

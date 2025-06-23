@@ -5,6 +5,6 @@
       volumes:
           - db-volume:/var/lib/postgresql/data
       networks:
-          - name: tp-network
+          - name: tp-network-database
       env:
           POSTGRES_PASSWORD: pwd

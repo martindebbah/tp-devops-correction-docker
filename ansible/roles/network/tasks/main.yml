@@ -1,3 +1,7 @@
-- name: Create network
+- name: Create database network
   docker_network:
-      name: tp-network
+      name: tp-network-database
+      
+- name: Create app network
+  docker_network:
+      name: tp-network-app
