@@ -1,0 +1,8 @@
+- name: Launch proxy
+  docker_container:
+      name: proxy
+      image: mdebbah/tp-devops-http-server:latest
+      networks:
+          - name: tp-network
+      ports:
+          - "80:80"
