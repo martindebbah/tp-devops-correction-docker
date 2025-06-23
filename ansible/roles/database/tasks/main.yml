@@ -2,6 +2,8 @@
   docker_container:
       name: database
       image: mdebbah/tp-devops-database:latest
+      pull: always
+      restart: true
       volumes:
           - db-volume:/var/lib/postgresql/data
       networks:
