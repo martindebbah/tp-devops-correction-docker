@@ -3,7 +3,15 @@
       name: simple-api
       image: mdebbah/tp-devops-simple-api:latest
       networks:
-          - name: tp-network
+          - name: tp-network-app
+          - name: tp-network-database
       env:
           DATABASE_HOST: database
           DATABASE_PASSWORD: pwd
+
+- name: Launch front
+  docker_container:
+      name: front
+      image: mdebbah/tp-devops-front:latest
+      networks:
+          - name: tp-network-app
