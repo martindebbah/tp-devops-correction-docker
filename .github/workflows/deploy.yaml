@@ -10,7 +10,7 @@ jobs:
         runs-on: ubuntu-24.04
         steps:
             - name: Copy SSH key
-              run: echo ${{ secret.SSH_PRIVATE_KEY }} > ~/.ssh/id_rsa_devops
+              run: echo ${{ secrets.SSH_PRIVATE_KEY }} > ~/.ssh/id_rsa_devops
 
             - name: Run playbook
               uses: dawidd6/action-ansible-playbook@v4
