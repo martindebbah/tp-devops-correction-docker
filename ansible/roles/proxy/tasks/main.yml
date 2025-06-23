@@ -2,6 +2,8 @@
   docker_container:
       name: proxy
       image: mdebbah/tp-devops-http-server:latest
+      pull: always
+      restart: true
       networks:
           - name: tp-network-app
       ports:

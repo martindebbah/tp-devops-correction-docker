@@ -2,6 +2,8 @@
   docker_container:
       name: simple-api
       image: mdebbah/tp-devops-simple-api:latest
+      pull: always
+      restart: true
       networks:
           - name: tp-network-app
           - name: tp-network-database
@@ -13,5 +15,7 @@
   docker_container:
       name: front
       image: mdebbah/tp-devops-front:latest
+      pull: always
+      restart: true
       networks:
           - name: tp-network-app
