@@ -1,0 +1,10 @@
+- name: Launch database
+  docker_container:
+      name: database
+      image: mdebbah/tp-devops-database:latest
+      volumes:
+          - db-volume:/var/lib/postgresql/data
+      networks:
+          - name: tp-network
+      env:
+          POSTGRES_PASSWORD: pwd
