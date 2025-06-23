@@ -9,8 +9,11 @@ jobs:
     deploy-with-ansible:
         runs-on: ubuntu-24.04
         steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+
             - name: Copy SSH key
-              run: echo ${{ secrets.SSH_PRIVATE_KEY }} > ~/.ssh/id_rsa_devops
+              run: echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa_devops
 
             - name: Run playbook
               uses: dawidd6/action-ansible-playbook@v4
